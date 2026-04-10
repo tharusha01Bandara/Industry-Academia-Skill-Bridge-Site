@@ -1,0 +1,54 @@
+{
+  "folders": [
+    {
+      "title": "Project Proposal",
+      "description": "Initial proposal submission",
+      "files": [
+        { "name": "Proposal.pdf", "url": "https://drive.google.com/drive/folders/1tE9QnOcvSMgDX6x3GTgQefxdeMcTWWz2?usp=drive_link" }
+      ]
+    },
+    {
+      "title": "Checklist 1",
+      "description": "First evaluation checklist",
+      "files": [
+        { "name": "Checklist1.pdf", "url": "https://drive.google.com/drive/folders/1oK8wColZSESX5N5RyjVk25_MVWYJlSs6" }
+      ]
+    },
+    {
+      "title": "Progress Presentation - 1",
+      "description": "First progress review slides",
+      "files": [
+        { "name": "Progress_Presentation1.pptx", "url": "https://drive.google.com/drive/folders/1-015L1OfZ45ZHO3c5oXDHpqbRpAH2wtI" }
+      ]
+    },
+    {
+      "title": "Research Paper",
+      "description": "Conference/Journal papers",
+      "files": [
+        { "name": "Research_Paper.pdf", "url": "https://drive.google.com/drive/folders/1oq77jw62D34GdHsls2OqSiWT-3C2a8B4" }
+      ]
+    },
+    {
+      "title": "Progress Presentation - 2",
+      "description": "Second progress review slides",
+      "files": [
+        { "name": "Progress_Presentation2.pptx", "url": "https://drive.google.com/drive/folders/10UDTCt7kdEfmOxlfP-XpWE4caz0qxHQU" }
+      ]
+    },
+    {
+      "title": "Final Report & Presentation",
+      "description": "Final report document and defense slides",
+      "files": [
+        { "name": "Final_Report.pdf", "url": "https://drive.google.com/drive/folders/1rZmglt2TdARrIoQcdEdDTZq-EpwzDQaD" },
+        { "name": "Final_Presentation.pptx", "url": "https://drive.google.com/drive/folders/1eN27-DxJ_wO9sIf0yWY0fTYj-UBR0bk8" }
+      ]
+    },
+    {
+      "title": "Checklist 2",
+      "description": "Final evaluation checklist",
+      "files": [
+        { "name": "Checklist2.pdf", "url": "https://drive.google.com/drive/folders/1-mET7cY9cCeNVr_RNkshbsXOLo6yolOX" }
+      ]
+    }
+  ]
+}

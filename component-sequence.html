@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AlphaBoost AI</title>
+  <meta name="description"
+    content="AlphaBoost AI is a kids' early literacy development application and research project focused the main aspects in writing, reading and speaking">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Baloo 2', 'ui-rounded', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#F0F9FF',
+              100: '#E0F2FE',
+              200: '#BAE6FD',
+              300: '#7DD3FC',
+              400: '#38BDF8',
+              500: '#0EA5E9', /* sky */
+              600: '#0284C7',
+              700: '#0369A1',
+            },
+            sun: {
+              400: '#FFD54A',
+              500: '#FFC727',
+              600: '#FFB300'
+            },
+            night: {
+              800: '#0f172a'
+            }
+          },
+          boxShadow: {
+            soft: '0 12px 30px -12px rgba(2,132,199,0.35)',
+          }
+        }
+      },
+      darkMode: 'class'
+    }
+  </script>
+  <style>
+    .clouds:before,
+    .clouds:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background-repeat: repeat-x;
+      background-position: bottom;
+      background-size: auto 120px;
+    }
+
+    .clouds:before {
+      bottom: -1px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="120" viewBox="0 0 600 120"><g fill="%23ffffff"><circle cx="40" cy="80" r="40"/><circle cx="80" cy="90" r="30"/><circle cx="130" cy="85" r="35"/><circle cx="180" cy="95" r="25"/><circle cx="230" cy="90" r="35"/><circle cx="280" cy="85" r="40"/><circle cx="330" cy="95" r="28"/><circle cx="380" cy="88" r="38"/><circle cx="430" cy="96" r="26"/><circle cx="480" cy="86" r="34"/><circle cx="530" cy="92" r="28"/><rect y="100" width="600" height="40" /></g></svg>');
+    }
+
+    .badge {
+      box-shadow: inset 0 -2px 0 rgba(0, 0, 0, .12);
+    }
+  </style>
+</head>
+
+<body class="bg-brand-50 text-night-800 dark:bg-night-800 dark:text-white">
+  <!-- NAV -->
+  <header
+    class="sticky top-0 z-50 bg-white/70 dark:bg-night-800/70 backdrop-blur border-b border-white/30 dark:border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3">
+        <span class="inline-block w-10 h-10 rounded-2xl ">
+          <img src="assets/ALphaBoost.png" alt="Logo">
+        </span>
+        <span class="font-display text-2xl tracking-tight">AlphaBoost <span class="text-brand-600">AI</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 font-medium relative">
+        <div class="group">
+          <button class="hover:text-brand-600 flex items-center gap-1">
+            <span>Research</span>
+            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div
+            class="absolute hidden group-hover:block bg-white dark:bg-night-800 shadow-lg rounded-lg pt-4 pb-2 w-48 border border-black/5 dark:border-white/10">
+            <a href="#intro" class="block px-4 py-2 text-sm hover:bg-brand-50 dark:hover:bg-white/5">Introduction</a>
+            <a href="#gaps" class="block px-4 py-2 text-sm hover:bg-brand-50 dark:hover:bg-white/5">Research Gaps</a>
+            <a href="#questions" class="block px-4 py-2 text-sm hover:bg-brand-50 dark:hover:bg-white/5">Research Questions</a>
+            <a href="#objectives" class="block px-4 py-2 text-sm hover:bg-brand-50 dark:hover:bg-white/5">Objectives</a>
+          </div>
+        </div>
+        <a href="#components" class="hover:text-brand-600">Components</a>
+        <a href="#stack" class="hover:text-brand-600">Tools & Tech</a>
+        <a href="#timeline" class="hover:text-brand-600">Timeline</a>
+        <a href="#team" class="hover:text-brand-600">Team</a>
+        <a href="#documents" class="hover:text-brand-600">Downloads</a>
+        <a href="#contact" class="hover:text-brand-600">Contact</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button id="themeBtn"
+          class="px-3 py-1.5 text-sm rounded-xl border border-night-800/10 dark:border-white/10">Dark</button>
+        <button id="menuBtn" class="md:hidden p-2 rounded-lg border border-night-800/10 dark:border-white/10">☰</button>
+      </div>
+    </div>
+    <div id="mobile" class="hidden md:hidden border-t border-white/30 dark:border-white/10">
+      <nav class="grid grid-cols-2 gap-2 p-3 text-sm">
+        <a href="#intro" class="py-2">Introduction</a>
+        <a href="#gaps" class="py-2">Research Gaps</a>
+        <a href="#questions" class="py-2">Research Questions</a>
+        <a href="#objectives" class="py-2">Objectives</a>
+        <a href="#stack" class="py-2">Tools & Tech</a>
+        <a href="#timeline" class="py-2">Timeline</a>
+        <a href="#team" class="py-2">Team</a>
+        <a href="#documents" class="py-2">Downloads</a>
+        <a href="#contact" class="py-2">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO (playful like inspiration) -->
+  <section id="home"
+    class="relative overflow-hidden bg-gradient-to-b from-brand-100 via-brand-50 to-white dark:from-night-800 dark:via-night-800 dark:to-night-800">
+    <div class="absolute inset-0 pointer-events-none">
+      <!-- small stars -->
+      <div class="absolute left-12 top-16 text-sun-500 text-2xl">★</div>
+      <div class="absolute right-16 top-24 text-sun-500 text-xl">★</div>
+      <div class="absolute left-24 bottom-24 text-brand-400 text-xl">✦</div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 grid lg:grid-cols-2 gap-10 items-center">
+      <div class="max-w-xl">
+        <span class="badge inline-block bg-sun-500 text-night-800 px-4 py-1.5 rounded-full font-semibold">Learning •
+          letters, the smart way!</span>
+        <h1 class="mt-5 font-display text-5xl sm:text-6xl leading-tight">
+          <span class="block">Successful Literacy</span>
+          <span class="block text-sun-600">For Your Kids.</span>
+        </h1>
+        <p class="mt-4 text-lg text-night-800/80 dark:text-white/80">Alpha Boost AI is designed to enhance children’s
+          literacy development by leveraging AI-powered tools. It focuses on early letter learning, sequencing, phonetic
+          mapping, and spatial awareness, offering a smart way to practice and learn.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#intro" class="px-5 py-3 rounded-2xl bg-brand-600 text-white shadow-soft hover:bg-brand-700">Explore
+            Research</a>
+          <a href="#documents"
+            class="px-5 py-3 rounded-2xl border border-night-800/10 dark:border-white/10 hover:border-brand-600">Download
+            Materials</a>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="rounded-3xl overflow-hidden ring-1 ring-black/5 shadow-soft bg-white/60">
+          <img src="assets/alphaboostAi_banner.png" alt="AlphaBoost banner" class="w-full h-full object-cover">
+        </div>
+
+      </div>
+    </div>
+
+    <div class="relative clouds"></div>
+  </section>
+ <section class="py-16 bg-white dark:bg-night-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="font-display text-4xl mb-6 text-brand-600">Letter Sequencing</h1>
+      <p class="text-lg leading-relaxed text-night-800/80 dark:text-white/80 mb-6">
+        The <strong>Letter Sequencing</strong> component focuses on identifying spelling and order-related errors in children’s
+        writing. It analyzes omissions, substitutions, transpositions, and misplaced silent letters — common issues that
+        disrupt early reading and spelling fluency. The module provides AI-assisted feedback and adaptive correction exercises
+        to help learners understand proper letter order and word formation.
+      </p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-2">Dataset</h2>
+      <p>
+        The dataset includes <strong>500 handwritten single-word samples</strong> collected from primary students (Grades K–5).
+        Each entry was annotated with sequence error labels such as omission, substitution, and transposition. OCR
+        preprocessing was applied to digitize written input for model training.
+      </p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-2">Model Implementation</h2>
+      <p>
+        A <strong>BiLSTM sequence model</strong> was employed to learn temporal patterns in letter order. OCR-transcribed words
+        were converted into <strong>phonetic encodings</strong> (Soundex, Metaphone) and analyzed using
+        <strong>Levenshtein distance</strong> to detect insertions, deletions, and substitutions. The model achieved an
+        <strong>F1-score above 90%</strong> in classifying error types and generating correction suggestions.
+      </p>
+
+      <h2 class="text-2xl font-semibold mt-8 mb-2">Educational Impact</h2>
+      <p>
+        This module strengthens word formation, spelling accuracy, and phoneme sequencing awareness. Learners receive
+        instant, visual feedback showing incorrect letter orders and suggested corrections. Through gamified spelling
+        challenges and repetition-based exercises, children improve accuracy, attention, and retention.
+      </p>
+
+      <div class="mt-10">
+        <a href="index.html#components"
+          class="px-6 py-3 rounded-2xl bg-brand-600 text-white hover:bg-brand-700">← Back to Research</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="py-10 border-t border-black/5 dark:border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm opacity-80">© <span id="year"></span> AlphaBoost AI • Early Literacy Research</p>
+      <div class="text-sm flex items-center gap-4">
+        <a class="underline" href="index.html#documents">Files</a>
+        <a class="underline" href="index.html#team">Team</a>
+        <a class="underline" href="index.html#questions">Research Questions</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('menuBtn').addEventListener('click', () => {
+      document.getElementById('mobile').classList.toggle('hidden');
+    });
+    const root = document.documentElement;
+    const themeBtn = document.getElementById('themeBtn');
+    const saved = localStorage.getItem('ab-theme');
+    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      root.classList.add('dark'); themeBtn.textContent = 'Light';
+    }
+    themeBtn.addEventListener('click', () => {
+      root.classList.toggle('dark');
+      const isDark = root.classList.contains('dark');
+      themeBtn.textContent = isDark ? 'Light' : 'Dark';
+      localStorage.setItem('ab-theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+</html>

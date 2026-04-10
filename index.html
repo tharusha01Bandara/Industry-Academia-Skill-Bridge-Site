@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Industy-Academic Skill Bridge</title>
+  <meta name="description"
+    content="AlphaBoost AI is a kids' early literacy development application and research project focused the main aspects in writing, reading and speaking">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Baloo 2', 'ui-rounded', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#F0F9FF',
+              100: '#E0F2FE',
+              200: '#BAE6FD',
+              300: '#7DD3FC',
+              400: '#38BDF8',
+              500: '#0EA5E9', /* sky */
+              600: '#0284C7',
+              700: '#0369A1',
+            },
+            sun: {
+              400: '#FFD54A',
+              500: '#FFC727',
+              600: '#FFB300'
+            },
+            night: {
+              800: '#0f172a'
+            }
+          },
+          boxShadow: {
+            soft: '0 12px 30px -12px rgba(2,132,199,0.35)',
+          }
+        }
+      },
+      darkMode: 'class'
+    }
+  </script>
+  <style>
+    .clouds:before,
+    .clouds:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background-repeat: repeat-x;
+      background-position: bottom;
+      background-size: auto 120px;
+    }
+
+    .clouds:before {
+      bottom: -1px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="120" viewBox="0 0 600 120"><g fill="%23ffffff"><circle cx="40" cy="80" r="40"/><circle cx="80" cy="90" r="30"/><circle cx="130" cy="85" r="35"/><circle cx="180" cy="95" r="25"/><circle cx="230" cy="90" r="35"/><circle cx="280" cy="85" r="40"/><circle cx="330" cy="95" r="28"/><circle cx="380" cy="88" r="38"/><circle cx="430" cy="96" r="26"/><circle cx="480" cy="86" r="34"/><circle cx="530" cy="92" r="28"/><rect y="100" width="600" height="40" /></g></svg>');
+    }
+
+    .badge {
+      box-shadow: inset 0 -2px 0 rgba(0, 0, 0, .12);
+    }
+  </style>
+</head>
+
+<body class="bg-brand-50 text-night-800 dark:bg-night-800 dark:text-white">
+  <!-- NAV -->
+  <header
+    class="sticky top-0 z-50 bg-white/70 dark:bg-night-800/70 backdrop-blur border-b border-white/30 dark:border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3">
+        <span class="inline-block w-10 h-10 rounded-2xl ">
+          <img src="assets/ALphaBoost.png" alt="Logo">
+        </span>
+        <span class="font-display text-2xl tracking-tight">AlphaBoost <span class="text-brand-600">AI</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 font-medium relative">
+        <div class="group">
+          <button class="hover:text-brand-600 flex items-center gap-1">
+            <span>Research</span>
+            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div
+            class="absolute hidden group-hover:block bg-white dark:bg-night-800 shadow-lg rounded-lg pt-4 pb-2 w-48 border border-black/5 dark:border-white/10">
+            <a href="#intro" class="block px-4 py-2 text-sm hover:bg-brand-50 dark:hover:bg-white/5">Introduction</a>
+            <a href="#gaps" class="block px-4 py-2 text-sm hover:bg-brand-50 dark:hover:bg-white/5">Research Gaps</a>
+            <a href="#questions" class="block px-4 py-2 text-sm hover:bg-brand-50 dark:hover:bg-white/5">Research Questions</a>
+            <a href="#objectives" class="block px-4 py-2 text-sm hover:bg-brand-50 dark:hover:bg-white/5">Objectives</a>
+          </div>
+        </div>
+        <a href="#components" class="hover:text-brand-600">Components</a>
+        <a href="#stack" class="hover:text-brand-600">Tools & Tech</a>
+        <a href="#timeline" class="hover:text-brand-600">Timeline</a>
+        <a href="#team" class="hover:text-brand-600">Team</a>
+        <a href="#documents" class="hover:text-brand-600">Downloads</a>
+        <a href="#contact" class="hover:text-brand-600">Contact</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button id="themeBtn"
+          class="px-3 py-1.5 text-sm rounded-xl border border-night-800/10 dark:border-white/10">Dark</button>
+        <button id="menuBtn" class="md:hidden p-2 rounded-lg border border-night-800/10 dark:border-white/10">☰</button>
+      </div>
+    </div>
+    <div id="mobile" class="hidden md:hidden border-t border-white/30 dark:border-white/10">
+      <nav class="grid grid-cols-2 gap-2 p-3 text-sm">
+        <a href="#intro" class="py-2">Introduction</a>
+        <a href="#gaps" class="py-2">Research Gaps</a>
+        <a href="#questions" class="py-2">Research Questions</a>
+        <a href="#objectives" class="py-2">Objectives</a>
+        <a href="#stack" class="py-2">Tools & Tech</a>
+        <a href="#timeline" class="py-2">Timeline</a>
+        <a href="#team" class="py-2">Team</a>
+        <a href="#documents" class="py-2">Downloads</a>
+        <a href="#contact" class="py-2">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO (playful like inspiration) -->
+  <section id="home"
+    class="relative overflow-hidden bg-gradient-to-b from-brand-100 via-brand-50 to-white dark:from-night-800 dark:via-night-800 dark:to-night-800">
+    <div class="absolute inset-0 pointer-events-none">
+      <!-- small stars -->
+      <div class="absolute left-12 top-16 text-sun-500 text-2xl">★</div>
+      <div class="absolute right-16 top-24 text-sun-500 text-xl">★</div>
+      <div class="absolute left-24 bottom-24 text-brand-400 text-xl">✦</div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 grid lg:grid-cols-2 gap-10 items-center">
+      <div class="max-w-xl">
+        <span class="badge inline-block bg-sun-500 text-night-800 px-4 py-1.5 rounded-full font-semibold">Learning •
+          letters, the smart way!</span>
+        <h1 class="mt-5 font-display text-5xl sm:text-6xl leading-tight">
+          <span class="block">Successful Literacy</span>
+          <span class="block text-sun-600">For Your Kids.</span>
+        </h1>
+        <p class="mt-4 text-lg text-night-800/80 dark:text-white/80">Alpha Boost AI is designed to enhance children’s
+          literacy development by leveraging AI-powered tools. It focuses on early letter learning, sequencing, phonetic
+          mapping, and spatial awareness, offering a smart way to practice and learn.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#intro" class="px-5 py-3 rounded-2xl bg-brand-600 text-white shadow-soft hover:bg-brand-700">Explore
+            Research</a>
+          <a href="#documents"
+            class="px-5 py-3 rounded-2xl border border-night-800/10 dark:border-white/10 hover:border-brand-600">Download
+            Materials</a>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="rounded-3xl overflow-hidden ring-1 ring-black/5 shadow-soft bg-white/60">
+          <img src="assets/alphaboostAi_banner.png" alt="AlphaBoost banner" class="w-full h-full object-cover">
+        </div>
+
+      </div>
+    </div>
+
+    <div class="relative clouds"></div>
+  </section>
+
+  <!-- INTRODUCTION -->
+  <section id="intro" class="py-16 bg-white dark:bg-night-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-4xl mb-4">Introduction</h2>
+      <p class="text-lg leading-relaxed text-night-800/80 dark:text-white/80">
+        Early literacy development relies on core skills such as letter recognition, phonemic awareness, sequencing, and
+        handwriting control. Many children struggle with visually similar letters, inconsistent spacing, and poor
+        alignment, reducing confidence and slowing reading progress. Traditional tracing and memorization tasks offer
+        little personalization or real-time correction, leaving errors unaddressed.
+        <br><br>
+        Although phonics-based instruction improves fluency, it often overlooks multilingual learners’ needs. Digital
+        tools focus mainly on tracing or phonics and rarely assess broader spatial aspects of handwriting. Advances in
+        AI—such as computer vision, sequence modeling, and speech recognition—show strong potential for analyzing
+        literacy errors and adapting feedback dynamically.
+        <br><br>
+        Yet, most systems treat these components separately and lack personalization or engagement. This study proposes
+        an AI-powered, interactive literacy framework that integrates recognition, phonics, sequencing, and spatial
+        awareness to deliver real-time, gamified learning and scalable classroom support.
+      </p>
+    </div>
+  </section>
+
+  <!-- LITERATURE REVIEW -->
+  <section id="literature" class="py-16 bg-brand-50/60 dark:bg-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-4xl mb-8">Literature Review</h2>
+      <div class="grid lg:grid-cols-3 gap-10 items-start">
+        <!-- Text Column -->
+        <div class="lg:col-span-2 space-y-5 text-night-800/80 dark:text-white/80 text-lg leading-relaxed">
+          <p>
+            Early Literacy Development (ELD) plays a vital role in shaping children’s academic, cognitive, and
+            communication skills. Yet, many learners struggle with handwriting aspects such as spacing, alignment, and
+            letter sizing, which directly affect their reading and writing confidence
+            <span class="opacity-70">[1], [2], [8]–[11]</span>. Studies indicate that nearly 30% of children experience
+            handwriting difficulties that impact legibility and academic success <span
+              class="opacity-70">[2]–[9]</span>.
+          </p>
+          <p>
+            A core contributor is the <strong>Spatial Awareness of Letter Placement (SALP)</strong>—how letters are
+            spaced, aligned, and sized within words and sentences. Despite clear evidence that targeted instruction
+            improves outcomes, less than 15% of teachers devote time to handwriting, leaving instruction generic and
+            inconsistent <span class="opacity-70">[8]</span>. Traditional tracing and copywriting exercises lack
+            personalization and real-time feedback, limiting their effectiveness <span class="opacity-70">[3],
+              [4]</span>.
+          </p>
+          <p>
+            Alongside SALP, children face other ELD challenges such as <strong>letter recognition</strong> (e.g., b/d,
+            p/q confusion) <span class="opacity-70">[4]</span>, <strong>sequencing errors</strong> (omissions,
+            transpositions, substitutions), and weak <strong>phoneme–grapheme correspondence</strong>, particularly in
+            multilingual settings like Sri Lanka <span class="opacity-70">[12]</span>. Although digital tools like
+            <em>Hooked on Phonics</em> and <em>GraphoLearn</em> are effective globally, they often fail to adapt to
+            local linguistic and cultural contexts <span class="opacity-70">[13]</span>.
+          </p>
+          <p>
+            Most existing handwriting apps emphasize letter formation but overlook SALP and real-time correction <span
+              class="opacity-70">[14], [15]</span>. Their one-size-fits-all approach cannot identify a child’s specific
+            errors or provide tailored guidance. Moreover, while AI research has advanced for dyslexia and dysgraphia
+            detection <span class="opacity-70">[4]</span>, the broader group of children with general handwriting
+            challenges remains underserved.
+          </p>
+          <p>
+            To bridge these gaps, this study proposes an <strong>AI-driven framework</strong> that detects and
+            classifies spatial awareness issues, delivers personalized feedback, and integrates gamified interventions
+            to enhance engagement and handwriting outcomes.
+          </p>
+        </div>
+
+        <!-- Side Info Card -->
+        <aside class="p-6 rounded-2xl bg-white dark:bg-night-800 border border-black/5">
+          <h3 class="font-semibold mb-3">Key Insights</h3>
+          <ul class="space-y-2 text-sm opacity-80">
+            <li>• 30% of children face handwriting difficulties</li>
+            <li>• SALP affects spacing, alignment, and sizing</li>
+            <li>• Traditional tracing lacks real-time feedback</li>
+            <li>• Recognition and sequencing errors reduce reading fluency</li>
+            <li>• Phoneme–grapheme gaps affect multilingual learners</li>
+            <li>• AI models can personalize correction and feedback</li>
+            <li>• Personalized and gamified learning boosts engagement</li>
+          </ul>
+          <h3 class="font-semibold mt-6 mb-2">Focus Areas</h3>
+          <ul class="space-y-1 text-sm opacity-80">
+            <li>• Letter identification and differentiation</li>
+            <li>• Letter sequencing and word generation</li>
+            <li>• Phoneme–grapheme mapping</li>
+            <li>• Adaptive and interactive feedback</li>
+            <li>• Spatial awareness detection and correction</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+  <!-- CORE COMPONENTS -->
+  <section id="components" class="py-16 bg-brand-50/60 dark:bg-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-4xl mb-8">Core Components</h2>
+      <p class="text-lg text-night-800/80 dark:text-white/80 max-w-2xl mx-auto mb-12">
+        AlphaBoost AI integrates four key components of early literacy—each powered by AI to diagnose errors, deliver
+        feedback, and personalize learning.
+      </p>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Letter Recognition -->
+        <a href="component-letter.html"
+          class="group p-6 rounded-2xl bg-white dark:bg-night-800 border border-black/5 hover:border-brand-500 hover:shadow-soft transition-all text-left">
+          <img src="assets/illus/recognition.jpg" alt="Letter Recognition"
+            class="w-full h-36 object-cover rounded-xl mb-4">
+          <h3 class="font-semibold text-xl mb-2 group-hover:text-brand-600">Letter Recognition</h3>
+          <p class="text-sm opacity-80">AI-based detection and differentiation of uppercase, lowercase, and visually
+            similar letters.</p>
+        </a>
+
+        <!-- Letter Sequencing -->
+        <a href="component-sequence.html"
+          class="group p-6 rounded-2xl bg-white dark:bg-night-800 border border-black/5 hover:border-brand-500 hover:shadow-soft transition-all text-left">
+          <img src="assets/illus/sequencing.jpg" alt="Letter Sequencing"
+            class="w-full h-36 object-cover rounded-xl mb-4">
+          <h3 class="font-semibold text-xl mb-2 group-hover:text-brand-600">Letter Sequencing</h3>
+          <p class="text-sm opacity-80">BiLSTM models identify and correct sequencing errors such as omissions and
+            transpositions.</p>
+        </a>
+
+        <!-- Phonetic Understanding -->
+        <a href="component-phonetic.html"
+          class="group p-6 rounded-2xl bg-white dark:bg-night-800 border border-black/5 hover:border-brand-500 hover:shadow-soft transition-all text-left">
+          <img src="assets/illus/phonetic.jpg" alt="Phonetic Understanding"
+            class="w-full h-36 object-cover rounded-xl mb-4">
+          <h3 class="font-semibold text-xl mb-2 group-hover:text-brand-600">Phonetic Understanding</h3>
+          <p class="text-sm opacity-80">Speech-driven feedback aligns phonemes and graphemes to improve pronunciation
+            accuracy.</p>
+        </a>
+
+        <!-- Spatial Awareness -->
+        <a href="component-salp.html"
+          class="group p-6 rounded-2xl bg-white dark:bg-night-800 border border-black/5 hover:border-brand-500 hover:shadow-soft transition-all text-left">
+          <img src="assets/illus/salp.jpg" alt="Spatial Awareness" class="w-full h-36 object-cover rounded-xl mb-4">
+          <h3 class="font-semibold text-xl mb-2 group-hover:text-brand-600">Spatial Awareness in Letter Placement</h3>
+          <p class="text-sm opacity-80">CRAFT + ResNet models detect spacing, alignment, and sizing issues in
+            handwriting.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <section id="references" class="py-16 bg-white dark:bg-night-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-4xl mb-8">References</h2>
+      <ul class="l pl-4 space-y-3 text-sm md:text-base leading-relaxed text-night-800/80 dark:text-white/80">
+        <li>[1] National Reading Panel, <em>Teaching Children to Read: An Evidence-Based Assessment...</em> Washington,
+          DC, USA: U.S. Dept. Educ., 2000.</li>
+        <li>[2] K. P. Feder and A. Majnemer, “Handwriting development, competency, and intervention,” <em>Dev. Med.
+            Child Neurol.</em>, vol. 49, no. 4, pp. 312–317, Mar. 2007.</li>
+        <li>[3] M. J. M. Volman, B. M. van Schendel, and M. J. Jongmans, “Handwriting difficulties in primary school
+          children: A search for underlying mechanisms,” <em>Am. J. Occup. Ther.</em>, vol. 60, no. 4, pp. 451–460, Jul.
+          2006, doi: 10.5014/ajot.60.4.451.</li>
+        <li>[4] S. Rangasrinivasan et al., “AI-enhanced child handwriting analysis: A framework for the early screening
+          of dyslexia and dysgraphia,” <em>SN Comput. Sci.</em>, vol. 6, no. 399, 2025.</li>
+        <li>[5] P. D. Jadhav, S. S. Rajput, and A. D. Kulkarni, “Handwritten character recognition using convolutional
+          neural network,” in <em>Proc. Int. Conf. Comput., Commun., Control Autom. (ICCUBEA)</em>, Pune, India, 2017,
+          pp. 1–5.</li>
+        <li>[6] S. Hochreiter and J. Schmidhuber, “Long short-term memory,” <em>Neural Comput.</em>, vol. 9, no. 8, pp.
+          1735–1780, 1997.</li>
+        <li>[7] S. Graham, D. Perin, S. Kiuhara, and K. R. Harris, “A meta-analysis of writing instruction for students
+          in the elementary grades,” <em>J. Educ. Psychol.</em>, vol. 104, no. 4, pp. 879–896, Jul. 2012, doi:
+          10.1037/a0029185.</li>
+        <li>[8] B. Sheffield, “Handwriting: A neglected cornerstone of literacy,” <em>Ann. Dyslexia</em>, vol. 46, pp.
+          21–35, Jan. 1996, doi: 10.1007/BF02648169.</li>
+        <li>[9] S. Graham and L. Miller, “Handwriting research and practice: A unified approach,” <em>Focus Except.
+            Child.</em>, vol. 13, no. 2, Mar. 2018, doi: 10.17161/fec.v13i2.7428.</li>
+        <li>[10] M. Cohn, “Letter recognition difficulties: Their real nature,” presented at the <em>Annu. Meeting Int.
+            Reading Assoc. (19th)</em>, New Orleans, LA, USA, May 1–4, 1974.</li>
+        <li>[11] Y. Baek, B. Lee, D. Han, S. Yun, and H. Lee, “Character region awareness for text detection,” in
+          <em>Proc. IEEE/CVF Conf. Comput. Vis. Pattern Recognit. (CVPR)</em>, Long Beach, CA, USA, Jun. 2019, pp.
+          9365–9374, doi: 10.1109/CVPR.2019.00959.</li>
+        <li>[12] M. Schuster and K. K. Paliwal, “Bidirectional recurrent neural networks,” <em>IEEE Trans. Signal
+            Process.</em>, vol. 45, no. 11, pp. 2673–2681, 1997.</li>
+        <li>[13] V. Levenshtein, “Binary codes capable of correcting deletions, insertions and reversals,” <em>Sov.
+            Phys. Dokl.</em>, vol. 10, no. 8, pp. 707–710, 1966.</li>
+        <li>[14] N. Bonneton-Botté, L. Miramand, R. Bailly, and C. Pons, “Teaching and rehabilitation of handwriting for
+          children in the digital age: Issues and challenges,” <em>Children</em>, vol. 10, no. 7, p. 1096, Jun. 2023,
+          doi: 10.3390/children10071096.</li>
+        <li>[15] N. Amorim, L. Jeon, Y. Abel, E. F. Felisberto, L. N. F. Barbosa, and N. M. Dias, “Using Escribo Play
+          video games to improve phonological awareness, early reading, and writing in preschool,” <em>Educ. Res.</em>,
+          vol. 49, no. 3, pp. 188–197, 2020, doi: 10.3102/0013189X20909824.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- RESEARCH GAPS -->
+  <section id="gaps" class="py-16 bg-brand-50/60 dark:bg-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-4xl mb-8">Research Gaps</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white dark:bg-white/5 border border-black/5">
+          <img src="assets/illus/lackpers.jpg" alt="Lack of personalization illustration"
+            class="w-full h-32 object-cover rounded-xl mb-4" onerror="this.style.display='none'">
+          <h3 class="font-semibold">Lack of personalization</h3>
+          <p class="text-sm opacity-80 mt-2">Most literacy tools follow a one-size-fits-all approach, failing to adapt
+            to individual learners’ unique difficulties.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white dark:bg-white/5 border border-black/5">
+          <img src="assets/illus/limitreal.jpg" alt="Lack of personalization illustration"
+            class="w-full h-32 object-cover rounded-xl mb-4" onerror="this.style.display='none'">
+          <h3 class="font-semibold">Limited real-time feedback</h3>
+          <p class="text-sm opacity-80 mt-2">No system exists to instantly detect errors and guide children with
+            corrective feedback.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white dark:bg-white/5 border border-black/5">
+          <img src="assets/illus/poorskill.jpg" alt="Lack of personalization illustration"
+            class="w-full h-32 object-cover rounded-xl mb-4" onerror="this.style.display='none'">
+          <h3 class="font-semibold">Poor integration of skills</h3>
+          <p class="text-sm opacity-80 mt-2">Current apps focus on one literacy aspect at a time; none unify
+            recognition, phonics, sequencing, and handwriting placement.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white dark:bg-white/5 border border-black/5">
+          <h3 class="font-semibold">Low engagement & motivation</h3>
+          <p class="text-sm opacity-80 mt-2">Worksheets and static apps disengage learners; few offer gamified, adaptive
+            environments.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white dark:bg-white/5 border border-black/5">
+          <h3 class="font-semibold">Scalability challenges</h3>
+          <p class="text-sm opacity-80 mt-2">Teachers in large or diverse classrooms cannot provide enough individual
+            support without scalable AI assistance.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white dark:bg-white/5 border border-black/5">
+          <h3 class="font-semibold">Contextual & linguistic limits</h3>
+          <p class="text-sm opacity-80 mt-2">Few tools adapt to cultural and linguistic diversity, crucial for phonics
+            and recognition skills.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH QUESTION -->
+  <section id="questions" class="py-16">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-4xl mb-8">Research Questions</h2>
+      <ul class="space-y-4 list-disc pl-6 text-lg text-night-800/80 dark:text-white/80">
+        <li><strong>Personalization:</strong> How can AI provide adaptive, child-specific support across recognition,
+          phonics, sequencing, and spatial awareness?</li>
+        <li><strong>Real-time feedback:</strong> What AI methods can deliver instant corrective feedback instead of
+          delayed responses?</li>
+        <li><strong>Integrated framework:</strong> How can computer vision, NLP, and ML be combined to target all
+          literacy challenges together?</li>
+        <li><strong>Motivation & engagement:</strong> In what ways can gamification and interactivity sustain children’s
+          literacy practice?</li>
+        <li><strong>Classroom scalability:</strong> How can AI tools complement teachers in large classrooms with
+          scalable personalization?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- RESEARCH OBJECTIVES -->
+  <section id="objectives" class="py-16 bg-brand-50/60 dark:bg-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-start">
+
+      <!-- Left: Objective cards -->
+      <div>
+        <h2 class="font-display text-4xl mb-8">Research Objectives</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="p-6 rounded-2xl bg-white dark:bg-white/5 border border-black/5">
+            <h3 class="font-semibold">Personalized learning</h3>
+            <p class="text-sm opacity-80 mt-2">
+              Design AI methods that adapt to each child’s unique challenges across multiple literacy skills.
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-white/5 border border-black/5">
+            <h3 class="font-semibold">Real-time corrective feedback</h3>
+            <p class="text-sm opacity-80 mt-2">
+              Develop models that instantly detect literacy errors and offer immediate feedback.
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-white/5 border border-black/5">
+            <h3 class="font-semibold">Unified AI framework</h3>
+            <p class="text-sm opacity-80 mt-2">
+              Integrate computer vision, NLP, and ML into one holistic literacy-support system.
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-white/5 border border-black/5">
+            <h3 class="font-semibold">Gamified engagement</h3>
+            <p class="text-sm opacity-80 mt-2">
+              Create interactive, adaptive activities that sustain motivation and interest in literacy learning.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Supporting image -->
+      <div class="flex justify-center lg:justify-end">
+        <img src="assets/illus/gamifi.jpg" alt="Research Objectives Illustration"
+          class="max-w-sm rounded-2xl shadow-lg object-cover" onerror="this.style.display='none'">
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- TOOLS & TECH -->
+  <section id="stack" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-4xl mb-8">Tools & Tech</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+        <div
+          class="p-5 rounded-2xl bg-white dark:bg-white/5 border border-black/5 flex flex-col items-center justify-center text-center">
+          <div class="flex gap-4 text-5xl mb-3 p-2 bg-brand-50/60 dark:bg-white/5 rounded-xl"><i
+              class="devicon-python-plain"></i><i class="devicon-pytorch-original"></i><i
+              class="devicon-opencv-plain"></i></div>
+          <p>Python • PyTorch • OpenCV</p>
+        </div>
+        <div
+          class="p-5 rounded-2xl bg-white dark:bg-white/5 border border-black/5 flex flex-col items-center justify-center text-center">
+          <div class="flex gap-4 text-5xl mb-3 p-2 bg-brand-50/60 dark:bg-white/5 rounded-xl"><i
+              class="devicon-google-plain"></i></div>
+          <p>EasyOCR/CRAFT (spacing)</p>
+        </div>
+        <div
+          class="p-5 rounded-2xl bg-white dark:bg-white/5 border border-black/5 flex flex-col items-center justify-center text-center">
+          <div class="flex gap-4 text-5xl mb-3 p-2 bg-brand-50/60 dark:bg-white/5 rounded-xl"><i
+              class="devicon-pytorch-plain"></i></div>
+          <p>ResNet‑18/50 (baseline)</p>
+        </div>
+        <div
+          class="p-5 rounded-2xl bg-white dark:bg-white/5 border border-black/5 flex flex-col items-center justify-center text-center">
+          <div class="flex gap-4 text-5xl mb-3 p-2 bg-brand-50/60 dark:bg-white/5 rounded-xl"><i
+              class="devicon-pytorch-plain"></i></div>
+          <p>ResNet‑18 + SVM (size)</p>
+        </div>
+        <div
+          class="p-5 rounded-2xl bg-white dark:bg-white/5 border border-black/5 flex flex-col items-center justify-center text-center">
+          <div class="flex gap-4 text-5xl mb-3 p-2 bg-brand-50/60 dark:bg-white/5 rounded-xl"><i
+              class="devicon-r-original"></i></div>
+          <p>XGBoost (prediction)</p>
+        </div>
+        <div
+          class="p-5 rounded-2xl bg-white dark:bg-white/5 border border-black/5 flex flex-col items-center justify-center text-center">
+          <div class="flex gap-4 text-5xl mb-3 p-2 bg-brand-50/60 dark:bg-white/5 rounded-xl"><i
+              class="devicon-firebase-plain"></i></div>
+          <p>Firebase / Firestore</p>
+        </div>
+        <div
+          class="p-5 rounded-2xl bg-white dark:bg-white/5 border border-black/5 flex flex-col items-center justify-center text-center">
+          <div class="flex gap-4 text-5xl mb-3 p-2 bg-brand-50/60 dark:bg-white/5 rounded-xl"><i
+              class="devicon-flask-original"></i><i class="devicon-google-plain"></i></div>
+          <p>Flask • Colab • Ngrok</p>
+        </div>
+        <div
+          class="p-5 rounded-2xl bg-white dark:bg-white/5 border border-black/5 flex flex-col items-center justify-center text-center">
+          <div class="flex gap-4 text-5xl mb-3 p-2 bg-brand-50/60 dark:bg-white/5 rounded-xl"><i
+              class="devicon-tailwindcss-plain"></i><i class="devicon-netlify-plain"></i><i
+              class="devicon-github-original"></i></div>
+          <p>Tailwind • Netlify/GitHub</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline" class="py-16  bg-brand-50/60 dark:bg-white/5">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-4xl mb-10 text-night-800 dark:text-white">Project Timeline</h2>
+
+      <ol
+        class="relative space-y-10 before:absolute before:-ml-px before:h-full before:w-0.5 before:rounded-full before:bg-brand-200 dark:before:bg-white/20">
+        <!-- Project Proposal -->
+        <li class="relative -ms-1.5 flex items-start gap-4">
+          <span class="size-3 shrink-0 rounded-full bg-brand-600"></span>
+          <div class="-mt-2">
+            <time class="text-xs font-medium text-gray-700 dark:text-gray-300">August 2025</time>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white">Project Proposal</h3>
+            <p class="mt-1 text-sm text-gray-700 dark:text-gray-200">
+              A Project Proposal is presented to sponsors/clients to receive funding or get project approval.
+            </p>
+            <p class="mt-1 text-sm text-sun-600 dark:text-sun-500">
+              Marks Allocated: <strong>6</strong> &nbsp;|&nbsp; Weight: <strong>6%</strong>
+            </p>
+          </div>
+        </li>
+
+        <!-- Progress Presentation I -->
+        <li class="relative -ms-1.5 flex items-start gap-4">
+          <span class="size-3 shrink-0 rounded-full bg-brand-600"></span>
+          <div class="-mt-2">
+            <time class="text-xs font-medium text-gray-700 dark:text-gray-300">January 2026</time>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white">Progress Presentation I</h3>
+            <p class="mt-1 text-sm text-gray-700 dark:text-gray-200">
+              Reviews the 50% completion status of the project and reveals gaps or inconsistencies in
+              design/requirements.
+            </p>
+            <p class="mt-1 text-sm text-sun-600 dark:text-sun-500">
+              Marks Allocated: <strong>6</strong> &nbsp;|&nbsp; Weight: <strong>6%</strong>
+            </p>
+          </div>
+        </li>
+
+        <!-- Research Paper -->
+        <li class="relative -ms-1.5 flex items-start gap-4">
+          <span class="size-3 shrink-0 rounded-full bg-brand-600"></span>
+          <div class="-mt-2">
+            <time class="text-xs font-medium text-gray-700 dark:text-gray-300">February 2026</time>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white">Research Paper</h3>
+            <p class="mt-1 text-sm text-gray-700 dark:text-gray-200">
+              Describes contributions to existing knowledge, recognizing referenced work and outlining new findings.
+            </p>
+            <p class="mt-1 text-sm text-sun-600 dark:text-sun-500">
+              Marks Allocated: <strong>10</strong> &nbsp;|&nbsp; Weight: <strong>10%</strong>
+            </p>
+          </div>
+        </li>
+
+        <!-- Progress Presentation II -->
+        <li class="relative -ms-1.5 flex items-start gap-4">
+          <span class="size-3 shrink-0 rounded-full bg-brand-600"></span>
+          <div class="-mt-2">
+            <time class="text-xs font-medium text-gray-700 dark:text-gray-300">March 2026</time>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white">Progress Presentation II</h3>
+            <p class="mt-1 text-sm text-gray-700 dark:text-gray-200">
+              Reviews the 90% completion status with a live demonstration and Poster Presentation describing the project
+              as a whole.
+            </p>
+            <p class="mt-1 text-sm text-sun-600 dark:text-sun-500">
+              Marks Allocated: <strong>18</strong> &nbsp;|&nbsp; Weight: <strong>18%</strong>
+            </p>
+          </div>
+        </li>
+
+        <!-- Website Assessment -->
+        <li class="relative -ms-1.5 flex items-start gap-4">
+          <span class="size-3 shrink-0 rounded-full bg-brand-600"></span>
+          <div class="-mt-2">
+            <time class="text-xs font-medium text-gray-700 dark:text-gray-300">April 2026</time>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white">Website Assessment</h3>
+            <p class="mt-1 text-sm text-gray-700 dark:text-gray-200">
+              Website promotes the research project and reveals all details related to the project.
+            </p>
+            <p class="mt-1 text-sm text-sun-600 dark:text-sun-500">
+              Marks Allocated: <strong>2</strong> &nbsp;|&nbsp; Weight: <strong>2%</strong>
+            </p>
+          </div>
+        </li>
+
+        <!-- Logbook -->
+        <li class="relative -ms-1.5 flex items-start gap-4">
+          <span class="size-3 shrink-0 rounded-full bg-brand-600"></span>
+          <div class="-mt-2">
+            <time class="text-xs font-medium text-gray-700 dark:text-gray-300">April 2026</time>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white">Logbook</h3>
+            <p class="mt-1 text-sm text-gray-700 dark:text-gray-200">
+              Validates project status, including Status documents 1 & 2.
+            </p>
+            <p class="mt-1 text-sm text-sun-600 dark:text-sun-500">
+              Marks Allocated: <strong>3</strong> &nbsp;|&nbsp; Weight: <strong>3%</strong>
+            </p>
+          </div>
+        </li>
+
+        <!-- Final Report -->
+        <li class="relative -ms-1.5 flex items-start gap-4">
+          <span class="size-3 shrink-0 rounded-full bg-brand-600"></span>
+          <div class="-mt-2">
+            <time class="text-xs font-medium text-gray-700 dark:text-gray-300">March 2026</time>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white">Final Report</h3>
+            <p class="mt-1 text-sm text-gray-700 dark:text-gray-200">
+              Evaluates the completed project including group, individual, and final reports.
+            </p>
+            <p class="mt-1 text-sm text-sun-600 dark:text-sun-500">
+              Marks Allocated: <strong>19</strong> &nbsp;|&nbsp; Weight: <strong>19%</strong>
+            </p>
+          </div>
+        </li>
+
+        <!-- Final Presentation & Viva -->
+        <li class="relative -ms-1.5 flex items-start gap-4">
+          <span class="size-3 shrink-0 rounded-full bg-brand-600"></span>
+          <div class="-mt-2">
+            <time class="text-xs font-medium text-gray-700 dark:text-gray-300">May 2026</time>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white">Final Presentation & Viva</h3>
+            <p class="mt-1 text-sm text-gray-700 dark:text-gray-200">
+              Individual Viva assesses each member’s contribution to the project.
+            </p>
+            <p class="mt-1 text-sm text-sun-600 dark:text-sun-500">
+              Marks Allocated: <strong>20</strong> &nbsp;|&nbsp; Weight: <strong>20%</strong>
+            </p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+
+  <!-- TEAM (dynamic from JSON) -->
+  <section id="team" class="py-16">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+      <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
+        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our team</h2>
+        <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
+          Meet the people behind AlphaBoost AI.
+        </p>
+      </div>
+      <div id="teamRoot" class="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <!-- JS will insert member cards here -->
+      </div>
+
+      <!-- Error / Empty states -->
+      <p id="teamError" class="hidden mt-6 text-sm text-red-600">
+        Could not load <code>data/team.json</code>.
+      </p>
+    </div>
+  </section>
+
+  <!-- DOWNLOADS -->
+  <section id="documents" class="py-16  bg-brand-50/60 dark:bg-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-4xl mb-2">Documents</h2>
+      <div id="docRoot" class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- JS renders cards here -->
+      </div>
+
+      <div id="docError" class="hidden mt-4 text-sm text-red-600">
+        Could not load <code>data/documents.json</code>.
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-4xl mb-6">Contact Us</h2>
+      <form action="https://formspree.io/f/xblaegeb" method="POST" class="space-y-4">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <input
+            class="w-full px-4 py-3 rounded-xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-white/5"
+            placeholder="Your Name" name="name" required>
+          <input type="email"
+            class="w-full px-4 py-3 rounded-xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-white/5"
+            placeholder="Email" name="email" required>
+        </div>
+        <textarea
+          class="w-full px-4 py-3 rounded-xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-white/5"
+          rows="5" placeholder="Message" name="message" required></textarea>
+        <button class="px-6 py-3 rounded-2xl bg-sun-500 text-night-800 font-semibold hover:bg-sun-600">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 border-t border-black/5 dark:border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm opacity-80">© <span id="year"></span> AlphaBoost AI • Early Literacy Research</p>
+      <div class="text-sm flex items-center gap-4">
+        <a class="underline" href="#documents">Files</a>
+        <a class="underline" href="#team">Team</a>
+        <a class="underline" href="#questions">Research Questions</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('menuBtn').addEventListener('click', () => {
+      document.getElementById('mobile').classList.toggle('hidden');
+    });
+    const root = document.documentElement;
+    const themeBtn = document.getElementById('themeBtn');
+    const saved = localStorage.getItem('ab-theme');
+    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      root.classList.add('dark'); themeBtn.textContent = 'Light';
+    }
+    themeBtn.addEventListener('click', () => {
+      root.classList.toggle('dark');
+      const isDark = root.classList.contains('dark');
+      themeBtn.textContent = isDark ? 'Light' : 'Dark';
+      localStorage.setItem('ab-theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+
+  <script>
+    // ---- Documents loader ----
+    fetch('data/documents.json', { cache: 'no-cache' })
+      .then(r => r.json())
+      .then(renderDocuments)
+      .catch(() => document.getElementById('docError')?.classList.remove('hidden'));
+
+    function renderDocuments(data) {
+      const root = document.getElementById('docRoot');
+      if (!root) return;
+
+      const folders = Array.isArray(data?.folders) ? data.folders : [];
+      if (!folders.length) {
+        root.innerHTML = '<div class="text-sm text-night-800/70 dark:text-white/70">No documents yet.</div>';
+        return;
+      }
+
+      root.innerHTML = '';
+      folders.forEach(folder => {
+        const files = (folder.files || []).map(f => `
+          <div class="flex justify-between items-center text-sm">
+            <span class="truncate pr-3">${escapeHtml(f.name || '')}</span>
+            <a href="${encodeURI(f.url || '#')}" target="_blank" rel="noopener"
+              class="flex-shrink-0">
+              <svg class="w-6 h-6 text-brand-600 hover:text-brand-700 dark:text-brand-400"
+                  aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd"
+                  d="M9 7V2.221a2 2 0 0 0-.5.365L4.586 6.5a2 2 0 0 0-.365.5H9Zm2 0V2h7a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9h5a2 2 0 0 0 2-2Zm.5 5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm0 5c.47 0 .917-.092 1.326-.26l1.967 1.967a1 1 0 0 0 1.414-1.414l-1.817-1.818A3.5 3.5 0 1 0 11.5 17Z"
+                  clip-rule="evenodd"/>
+              </svg>
+            </a>
+          </div>
+        `).join('') || '<div class="text-sm opacity-70">No files.</div>';
+
+        const driveLink = folder.drive_url ? `
+          <a class="mt-3 inline-block underline text-sm text-night-800/80 dark:text-white/80 hover:text-brand-600"
+            href="${encodeURI(folder.drive_url)}" target="_blank" rel="noopener">
+            Open folder in Drive →
+          </a>` : '';
+
+        const card = document.createElement('article');
+        card.className = 'p-5 rounded-2xl bg-white dark:bg-white/5 border border-black/5';
+        card.innerHTML = `
+          <h3 class="font-semibold">${escapeHtml(folder.title || 'Untitled')}</h3>
+          <p class="text-xs text-night-800/70 dark:text-white/60 mt-1">${escapeHtml(folder.description || '')}</p>
+          <div class="mt-3 space-y-2">${files}</div>
+          ${driveLink}
+        `;
+        root.appendChild(card);
+      });
+    }
+
+    // Basic HTML escape to avoid accidental injection from JSON
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+    }
+  </script>
+  <script>
+    // ------- Team loader -------
+    fetch('data/team.json', { cache: 'no-cache' })
+      .then(r => r.json())
+      .then(renderTeam)
+      .catch(() => document.getElementById('teamError')?.classList.remove('hidden'));
+
+    function renderTeam(data) {
+      const root = document.getElementById('teamRoot');
+      if (!root) return;
+
+      const members = Array.isArray(data?.members) ? data.members : [];
+      if (!members.length) {
+        root.innerHTML = '<div class="col-span-full text-gray-500 dark:text-gray-400">No team members yet.</div>';
+        return;
+      }
+
+      root.innerHTML = '';
+      members.forEach(m => {
+        const socials = renderSocials(m?.socials || {});
+        const card = document.createElement('div');
+        card.className = 'text-center text-gray-500 dark:text-gray-400';
+
+        const avatar = escapeHtml(m?.avatar || 'https://placehold.co/144x144?text=Photo');
+        const name = escapeHtml(m?.name || 'Unnamed');
+        const role = escapeHtml(m?.role || '');
+
+        card.innerHTML = `
+          <img class="mx-auto mb-4 w-36 h-36 rounded-full object-cover" src="${avatar}" alt="${name} Avatar">
+          <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            ${m?.profile_url ? `<a href="${encodeURI(m.profile_url)}" target="_blank" rel="noopener">${name}</a>` : name}
+          </h3>
+          <p>${role}</p>
+          ${socials}
+        `;
+        root.appendChild(card);
+      });
+    }
+
+    function renderSocials(socials) {
+      // socials = { facebook, twitter, github, dribbble, linkedin, website, email }
+      const items = [
+        socials.facebook ? socialLink(socials.facebook, facebookIcon(), 'text-[#39569c]') : '',
+        socials.twitter ? socialLink(socials.twitter, twitterIcon(), 'text-[#00acee]') : '',
+        socials.github ? socialLink(socials.github, githubIcon(), 'text-gray-900 dark:text-gray-300') : '',
+        socials.email ? socialLink('mailto:' + socials.email, globeIcon(), 'text-gray-500 dark:text-brand-400') : '',
+        socials.dribbble ? socialLink(socials.dribbble, dribbbleIcon(), 'text-[#ea4c89]') : '',
+        socials.linkedin ? socialLink(socials.linkedin, linkedinIcon(), 'text-[#0A66C2]') : '',
+        socials.website ? socialLink(socials.website, globeIcon(), 'text-brand-600 dark:text-brand-400') : '',
+      ].filter(Boolean).join('');
+
+      if (!items) return '';
+      return `<ul class="flex justify-center mt-4 space-x-4">${items}</ul>`;
+    }
+
+    function socialLink(url, svg, cls) {
+      const safeUrl = encodeURI(url);
+      return `
+        <li>
+          <a href="${safeUrl}" class="${cls} hover:text-gray-900 dark:hover:text-white" target="_blank" rel="noopener" aria-label="${safeUrl}">
+            ${svg}
+          </a>
+        </li>
+      `;
+    }
+
+    // --- Icons (inline SVGs, sized like Flowbite) ---
+    function facebookIcon() { return `<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>`; }
+    function twitterIcon() { return `<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>`; }
+    function githubIcon() { return `<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>`; }
+    function dribbbleIcon() { return `<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clip-rule="evenodd" /></svg>`; }
+    function linkedinIcon() { return `<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8.5h4V24h-4V8.5zm7 0h3.8v2.1h.1c.5-.9 1.8-2.1 3.7-2.1 4 0 4.7 2.6 4.7 6V24h-4v-7.3c0-1.7 0-3.8-2.3-3.8s-2.7 1.8-2.7 3.6V24h-4V8.5z"/></svg>`; }
+    function globeIcon() {
+      return `<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="m3.62 6.389 8.396 6.724 8.638-6.572-7.69-4.29a1.975 1.975 0 0 0-1.928 0L3.62 6.39Z"/>
+      <path d="m22 8.053-8.784 6.683a1.978 1.978 0 0 1-2.44-.031L2.02 7.693a1.091 1.091 0 0 0-.019.199v11.065C2 20.637 3.343 22 5 22h14c1.657 0 3-1.362 3-3.043V8.053Z"/>
+      </svg>`;
+    }
+
+    // Escape HTML to avoid injecting from JSON
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+{
+  "members": [
+    {
+      "name": "Fadhil Fahim",
+      "role": "team member",
+      "avatar": "assets/team/fdl_profile.png",
+      "profile_url": "https://github.com/fadhilfahim",
+      "socials": {
+        "github": "https://github.com/fadhilfahim",
+        "linkedin": "https://www.linkedin.com/in/bonnie-green",
+        "email": "fadhil2k1@gmail.com"
+      }
+    },
+    {
+      "name": "Himaya Uwangi",
+      "role": "team member",
+      "avatar": "assets/team/himaya.png",
+      "socials": { 
+        "github": "https://github.com/IT21809538",
+        "linkedin": "https://www.linkedin.com/in/himaya-uwangi-327537265/",
+        "email": "himayauwangi8@gmail.com"
+       }
+    },
+    {
+      "name": "Abdul Nafih",
+      "role": "team member",
+      "avatar": "assets/team/nafih.jpeg",
+      "socials": { 
+        "github": "https://github.com/bonnie",
+        "linkedin": "https://www.linkedin.com/in/abdul-nafih-an/",
+        "email": "abdulnafihcool@gmail.com"
+       }
+    },
+    {
+      "name": "Dimagi Nethmini",
+      "role": "team member",
+      "avatar": "assets/team/dimagi.png",
+      "socials": { 
+        "github": "https://github.com/bonnie",
+        "linkedin": "https://www.linkedin.com/in/dimagi-nethmini/",
+        "email": "dimaginethmini0@gmail.com"
+       }
+    },
+    {
+      "name": "Samadhi Rathnayake",
+      "role": "Supervisor",
+      "avatar": "assets/team/samadi.png",
+      "socials": { 
+        "linkedin": "https://www.linkedin.com/in/samadhi-chathuranga-rathnayake/",
+        "email": "samadhi.r@sliit.lk"
+       }
+    },
+    {
+      "name": "Malithi Nawarathne",
+      "role": "Co Supervisor",
+      "avatar": "assets/team/malithi.png",
+      "socials": { 
+        "linkedin": "https://www.linkedin.com/in/malithi-nawarathne-2a443b18b/",
+        "email": "malithi.n@sliit.lk"
+       }
+    },
+    {
+      "name": "Asqin Haq",
+      "role": "External - Supervisor ",
+      "avatar": "assets/team/asqin.png",
+      "socials": { 
+        "linkedin": "https://www.linkedin.com/in/mohommed-asqin-haq-cassim-3b66b1130/",
+        "email": "fadhil2k1@gmail.com"
+       }
+    }
+  ]
+}
